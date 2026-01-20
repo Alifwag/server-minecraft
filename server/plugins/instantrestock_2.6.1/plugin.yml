@@ -1,0 +1,29 @@
+name: InstantRestock
+version: 2.6.1
+author: spartacus04
+main: me.spartacus04.instantrestock.InstantRestock
+api-version: 1.14
+description: plugin to allow villagers to have infinite trades
+folia-supported: true
+
+commands:
+  instantrestock:
+    description: Main command of the plugin
+    usage: /instantrestock
+    aliases:
+      - infinitetrading
+
+permissions:
+  instantrestock.*:
+    children:
+      - instantrestock.reload
+      - instantrestock.config
+  instantrestock.reload:
+    description: Allows the player to reload the plugin
+    default: op
+  instantrestock.config:
+    description: Allows the player to edit the config
+    default: op
+  instantrestock.notifyupdate:
+    description: Notifies player of new update
+    default: op

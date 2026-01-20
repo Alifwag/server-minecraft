@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: voicechat-api-2.6.0.jar configbuilder-2.1.0.jar json-2025010
+ 7.jar commodore-2.2.jar Concentus-1.0.1.jar commodore-file-1.0.jar brig
+ adier-1.0.18.jar
+Multi-Release: true
+

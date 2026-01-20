@@ -1,0 +1,7 @@
+name: Sit
+version: '1.7.1'
+main: me.usainsrht.sit.Sit
+api-version: 1.13
+author: UsainSrht
+description: Simple stair sitting plugin.
+website: "https://usainsrht.works"
