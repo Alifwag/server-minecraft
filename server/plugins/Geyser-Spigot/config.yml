@@ -29,7 +29,7 @@ bedrock:
 java:
   # What type of authentication Bedrock players will be checked against when logging into the Java server.
   # Can be "floodgate" (see https://wiki.geysermc.org/floodgate/), "online", or "offline".
-  auth-type: online
+  auth-type: floodgate
 
 # MOTD settings
 motd:
@@ -228,7 +228,7 @@ advanced:
     # assistance - and use UDP instead of TCP.
     # Disabling Bedrock authentication for other use-cases is NOT SUPPORTED, as it allows anyone to spoof usernames, and is therefore a security risk.
     # All Floodgate functionality (including skin uploading and account linking) will also not work when this option is disabled.
-    validate-bedrock-login: true
+    validate-bedrock-login: false
 
 # If debug messages should be sent through console
 debug-mode: false
