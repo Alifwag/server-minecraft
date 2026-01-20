@@ -1,7 +1,0 @@
-name: Multiverse-Portals
-main: org.mvplugins.multiverse.portals.MultiversePortals
-authors: ['Rigby', 'fernferret', 'benwoo1110']
-version: 5.2.0
-api-version: 1.13
-depend: ['Multiverse-Core']
-softdepend: ['WorldEdit', 'PlaceholderAPI']

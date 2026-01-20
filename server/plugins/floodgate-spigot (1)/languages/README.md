@@ -1,1 +1,0 @@
-This branch contains all translations relating to Floodgate.

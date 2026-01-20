@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-paperweight-mappings-namespace: mojang
-Class-Path: voicemessages-api-0.0.1.jar voicemessages-fabric-1.0.12-1.21
- .9-dev.jar
-
