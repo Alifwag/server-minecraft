@@ -1,0 +1,14 @@
+header-footer:
+  enabled: true
+  header:
+    - "&a&l✦ SERVER CROSSPLAY ✦"
+    - "&7Java 🔵 &8| &aBedrock 🟢"
+    - ""
+  footer:
+    - ""
+    - "&7Online: &a%online%"
+    - "&8Powered by Paper + Geyser"
+
+playerlist-name-format:
+  enabled: true
+  value: "%luckperms-prefix%%player%"
