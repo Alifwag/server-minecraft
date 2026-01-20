@@ -43,6 +43,58 @@ echo -e "${GREEN}DOM Cloud - Optimized Minecraft Server${NC}"
 
 
 #!/bin/bash
-JAVA="$PWD/jdk-21.0.2+13/bin/java"
 
-$JAVA -Xms512M -Xmx1200M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -jar paper.jar nogui
+set -e
+
+# ===============================
+# KONFIGURASI
+# ===============================
+JDK_VERSION="21.0.2+13"
+JDK_FOLDER="jdk-21.0.2+13"
+JDK_ARCHIVE="OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.2_13.tar.gz"
+JDK_URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.2+13/${JDK_ARCHIVE}"
+
+JAVA="$PWD/$JDK_FOLDER/bin/java"
+PAPER_JAR="paper.jar"
+
+# ===============================
+# CEK JDK
+# ===============================
+if [ ! -d "$JDK_FOLDER" ]; then
+  echo "🔍 JDK belum ditemukan"
+
+  if [ ! -f "$JDK_ARCHIVE" ]; then
+    echo "⬇️ Download JDK..."
+    wget -q --show-progress "$JDK_URL"
+  else
+    echo "📦 File JDK archive sudah ada, skip download"
+  fi
+
+  echo "📂 Extract JDK..."
+  tar -xzf "$JDK_ARCHIVE"
+
+  echo "✅ JDK berhasil diinstall"
+else
+  echo "✅ JDK sudah ada, skip install"
+fi
+
+# ===============================
+# CEK PAPER
+# ===============================
+if [ ! -f "$PAPER_JAR" ]; then
+  echo "❌ paper.jar tidak ditemukan!"
+  echo "➡️ Letakkan paper.jar di folder ini"
+  exit 1
+fi
+
+# ===============================
+# JALANKAN SERVER
+# ===============================
+echo "🚀 Menjalankan Minecraft Server..."
+exec "$JAVA" \
+  -Xms512M \
+  -Xmx1200M \
+  -XX:+UseG1GC \
+  -XX:+ParallelRefProcEnabled \
+  -XX:MaxGCPauseMillis=200 \
+  -jar "$PAPER_JAR" nogui
