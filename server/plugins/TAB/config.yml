@@ -1,3 +1,8 @@
+####################################################################
+# TAB FULL INTEGRATION CONFIG
+# Java + Bedrock | Rank | Icon | Color | Scoreboard | Skin
+####################################################################
+
 enabled-features:
   - TABLIST
   - NAMETAGS
@@ -7,8 +12,93 @@ enabled-features:
 use-online-uuid-in-tablist: true
 use-online-uuid-in-nametag: true
 
+####################################################################
+# PLACEHOLDER REFRESH
+####################################################################
 placeholder-refresh-intervals:
   ping: 1000
   online: 1000
   luckperms-prefix: 1000
   floodgate_isbedrock: 500
+
+####################################################################
+# TAB HEADER & FOOTER
+####################################################################
+header-footer:
+  enabled: true
+  header:
+    - "&a&l✦ CROSSPLAY SERVER ✦"
+    - "&7Java &9🔵 &8| &aBedrock 🟢"
+    - ""
+  footer:
+    - ""
+    - "&7Online: &a%online%"
+    - "&8Paper × Geyser × Floodgate"
+
+####################################################################
+# PLAYER NAME IN TAB (WITH SKIN)
+####################################################################
+playerlist-name-format:
+  enabled: true
+  value: "%luckperms-prefix%%player%"
+
+####################################################################
+# NAME TAGS (ABOVE HEAD)
+####################################################################
+sorting:
+  enabled: true
+  sorting-types:
+    - GROUPS
+    - PLAYERS
+
+groups:
+  owner:
+    prefix: "&6👑 &e"
+    suffix: ""
+    priority: 100
+
+  admin:
+    prefix: "&9👨‍💻 &b"
+    suffix: ""
+    priority: 90
+
+  member:
+    prefix: "&a✅ &a"
+    suffix: ""
+    priority: 10
+
+  default:
+    prefix: "&7"
+    suffix: ""
+    priority: 0
+
+####################################################################
+# SCOREBOARD
+####################################################################
+scoreboards:
+  default:
+    title: "&a&lSERVER"
+    lines:
+      - "&8&m━━━━━━━━━━━━"
+      - "&f👤 &a%player%"
+      - "&f🏷 %luckperms-prefix%"
+      - ""
+      - "&f🎮 %tab_client%"
+      - "&f📡 Ping: &a%ping%ms"
+      - "&f🌐 Online: &a%online%"
+      - ""
+      - "&8play.server.net"
+      - "&8&m━━━━━━━━━━━━"
+
+####################################################################
+# CUSTOM PLACEHOLDERS
+####################################################################
+placeholders:
+  tab_client:
+    conditions:
+      bedrock:
+        condition: "%floodgate_isbedrock%"
+        value: "&a🟢 Bedrock"
+      java:
+        condition: "!%floodgate_isbedrock%"
+        value: "&9🔵 Java"
